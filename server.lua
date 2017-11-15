@@ -3,7 +3,7 @@ function sendToDiscord(name, message)
   PerformHttpRequest('DISCORD_URL', function(err, text, headers) end, 'POST', json.encode({username = name, content = message}), { ['Content-Type'] = 'application/json' })
 end
 
-AddEventHandler('playerActivated', function()
+AddEventHandler('playerConnecting', function()
   sendToDiscord('SYSTEM', GetPlayerName(source) .. ' joined.')
 end)
 
