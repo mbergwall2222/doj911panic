@@ -10,8 +10,8 @@ AddEventHandler('chatMessage', function(source, name, message)
   if ( msg == "/911") then
       print("911 received")
       CancelEvent()
-
-      TriggerClientEvent('911:getLocation',source,name)
+      sendToAPI('Alex','.','.')
+      --TriggerClientEvent('911:getLocation',source,name)
   end
 end)
 
