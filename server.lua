@@ -6,13 +6,10 @@ end
 AddEventHandler('chatMessage', function(source, name, message)
   msg = string.lower( message )
 
-  -- Check to see if a client typed in /dv
   if ( msg == "/911") then
 
-      -- Cancel the chat message event (stop the server from posting the message)
       CancelEvent()
 
-      -- Trigger the client event
       sendToAPI(name,"911")
   end
 end)
