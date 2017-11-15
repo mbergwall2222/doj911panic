@@ -4,7 +4,17 @@ function sendToDiscord(name, message)
 end
 
 AddEventHandler('chatMessage', function(source, name, message)
-  sendToDiscord(name,message)
+  msg = string.lower( message )
+
+  -- Check to see if a client typed in /dv
+  if ( msg == "/911") then
+
+      -- Cancel the chat message event (stop the server from posting the message)
+      CancelEvent()
+
+      -- Trigger the client event
+      sendToDiscord('San Andreas Communications',name.." NEEDS EMERGENCY SERVICES (911)")
+  end
 end)
 
 AddEventHandler('playerConnecting', function()
